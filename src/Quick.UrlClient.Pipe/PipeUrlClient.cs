@@ -1,5 +1,4 @@
 ﻿using System.IO.Pipes;
-using Quick.UrlClient;
 
 namespace Quick.UrlClient.Pipe;
 
@@ -9,6 +8,8 @@ public class PipeUrlClient : IUrlClient
 
     private PipeUrlClientOptions options;
     private NamedPipeClientStream pipeClient;
+
+    public string Url => options.Url;
 
     public PipeUrlClient(PipeUrlClientOptions options)
     {
@@ -23,9 +24,7 @@ public class PipeUrlClient : IUrlClient
             pipeClient.WriteTimeout = options.WriteTimeout.Value;
     }
 
-    public PipeUrlClient(Uri uri) : this(new PipeUrlClientOptions(uri))
-    {
-    }
+    public PipeUrlClient(string url) : this(new PipeUrlClientOptions(url)) { }
 
     public void Open() => pipeClient.Connect(options.ConnectTimeout);
     public Task OpenAsync(CancellationToken cancellationToken) => pipeClient.ConnectAsync(options.ConnectTimeout, cancellationToken);

@@ -1,9 +1,8 @@
-using System;
 using System.IO.Pipes;
 
 namespace Quick.UrlClient.Pipe;
 
-public class PipeUrlClientOptions
+public class PipeUrlClientOptions : AbstractUrlClientOptions
 {
     public string ServerName { get; set; }
     public string PipeName { get; set; }
@@ -15,7 +14,9 @@ public class PipeUrlClientOptions
     public string ReadMode { get; set; } = nameof(PipeTransmissionMode.Byte);
 
     public PipeUrlClientOptions() { }
-    public PipeUrlClientOptions(Uri uri)
+    public PipeUrlClientOptions(string url) : base(url) { }
+
+    protected override void ParseUri(Uri uri)
     {
         ServerName = uri.Host;
         PipeName = uri.LocalPath;

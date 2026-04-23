@@ -2,9 +2,9 @@ namespace Quick.UrlClient;
 
 public static class UrlClientFactory
 {
-    private static Dictionary<string, Func<Uri, IUrlClient>> createFuncDict = new();
+    private static Dictionary<string, Func<string, IUrlClient>> createFuncDict = new();
 
-    public static void RegisterScheme(string scheme, Func<Uri, IUrlClient> createFunc)
+    public static void RegisterScheme(string scheme, Func<string, IUrlClient> createFunc)
     {
         createFuncDict[scheme] = createFunc;
     }
@@ -16,6 +16,6 @@ public static class UrlClientFactory
         var uri = new Uri(url);
         if (!createFuncDict.TryGetValue(uri.Scheme, out var createFunc))
             throw new NotImplementedException($"Unknown scheme: {uri.Scheme}");
-        return createFunc.Invoke(uri);
+        return createFunc.Invoke(url);
     }
 }

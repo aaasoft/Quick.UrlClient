@@ -9,6 +9,8 @@ public class TcpUrlClient : IUrlClient
     private TcpUrlClientOptions options;
     private TcpClient tcpClient;
 
+    public string Url => options.Url;
+
     public TcpUrlClient(TcpUrlClientOptions options)
     {
         this.options = options;
@@ -23,9 +25,7 @@ public class TcpUrlClient : IUrlClient
             tcpClient.ReceiveBufferSize = options.ReceiveBufferSize.Value;
     }
 
-    public TcpUrlClient(Uri uri) : this(new TcpUrlClientOptions(uri))
-    {
-    }
+    public TcpUrlClient(string url) : this(new TcpUrlClientOptions(url)) { }
 
     public void Open() => tcpClient.Connect(options.Host, options.Port);
     public async Task OpenAsync(CancellationToken cancellationToken) => await tcpClient.ConnectAsync(options.Host, options.Port, cancellationToken);

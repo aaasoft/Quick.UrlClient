@@ -13,15 +13,15 @@ public class WebSocketUrlClient : IUrlClient
     private WebSocketUrlClientOptions options;
     private ClientWebSocket client;
 
+    public string Url => options.Url;
+
     public WebSocketUrlClient(WebSocketUrlClientOptions options)
     {
         this.options = options;
         client = new();
     }
 
-    public WebSocketUrlClient(Uri uri) : this(new WebSocketUrlClientOptions(uri))
-    {
-    }
+    public WebSocketUrlClient(string url) : this(new WebSocketUrlClientOptions(url)) { }
 
     public void Open() => client.ConnectAsync(options.Uri, CancellationToken.None).Wait();
     public Task OpenAsync(CancellationToken cancellationToken) => client.ConnectAsync(options.Uri, cancellationToken);

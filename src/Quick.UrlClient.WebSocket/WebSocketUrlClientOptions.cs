@@ -1,11 +1,11 @@
 namespace Quick.UrlClient.WebSocket;
 
-public class WebSocketUrlClientOptions
+public class WebSocketUrlClientOptions : AbstractUrlClientOptions
 {
-    public Uri Uri { get; set; }
-
+    internal Uri Uri { get; private set; }
     public WebSocketUrlClientOptions() { }
-    public WebSocketUrlClientOptions(Uri uri)
+    public WebSocketUrlClientOptions(string url) : base(url) { }
+    protected override void ParseUri(Uri uri)
     {
         Uri = uri;
     }

@@ -1,6 +1,6 @@
 namespace Quick.UrlClient.SerialPort;
 
-public class SerialPortUrlClientOptions
+public class SerialPortUrlClientOptions : AbstractUrlClientOptions
 {
     public string PortName { get; set; }
     public int BaudRate { get; set; }
@@ -15,7 +15,9 @@ public class SerialPortUrlClientOptions
     private const string unixPortNamePrefix = "/dev";
 
     public SerialPortUrlClientOptions() { }
-    public SerialPortUrlClientOptions(Uri uri)
+    public SerialPortUrlClientOptions(string url) : base(url) { }
+
+    protected override void ParseUri(Uri uri)
     {
         PortName = uri.AbsolutePath;
         if (OperatingSystem.IsWindows())

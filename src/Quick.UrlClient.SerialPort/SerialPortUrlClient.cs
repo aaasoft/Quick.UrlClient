@@ -7,6 +7,8 @@ public class SerialPortUrlClient : IUrlClient
     private SerialPortUrlClientOptions options;
     private System.IO.Ports.SerialPort serialPort;
 
+    public string Url => options.Url;
+
     public SerialPortUrlClient(SerialPortUrlClientOptions options)
     {
         this.options = options;
@@ -26,9 +28,7 @@ public class SerialPortUrlClient : IUrlClient
             serialPort.ReadBufferSize = options.ReadBufferSize.Value;
     }
 
-    public SerialPortUrlClient(Uri uri) : this(new SerialPortUrlClientOptions(uri))
-    {
-    }
+    public SerialPortUrlClient(string url) : this(new SerialPortUrlClientOptions(url)) { }
 
     public void Open() => serialPort.Open();
     public async Task OpenAsync(CancellationToken cancellationToken) => await Task.Run(Open);

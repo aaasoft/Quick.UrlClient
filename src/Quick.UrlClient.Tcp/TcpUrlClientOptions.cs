@@ -1,6 +1,6 @@
 namespace Quick.UrlClient.Tcp;
 
-public class TcpUrlClientOptions
+public class TcpUrlClientOptions : AbstractUrlClientOptions
 {
     public string Host { get; set; }
     public int Port { get; set; }
@@ -10,7 +10,9 @@ public class TcpUrlClientOptions
     public int? ReceiveBufferSize { get; set; }
 
     public TcpUrlClientOptions() { }
-    public TcpUrlClientOptions(Uri uri)
+    public TcpUrlClientOptions(string url) : base(url) { }
+    
+    protected override void ParseUri(Uri uri)
     {
         Host = uri.Host;
         Port = uri.Port;
