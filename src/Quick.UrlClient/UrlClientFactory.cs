@@ -9,6 +9,8 @@ public static class UrlClientFactory
         createFuncDict[scheme] = createFunc;
     }
 
+    public static string[] GetAllSchemes() => createFuncDict.Keys.ToArray();
+
     public static IUrlClient Build(string url)
     {
         var uri = new Uri(url);
