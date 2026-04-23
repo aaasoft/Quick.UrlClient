@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ConsoleApp1/ConsoleApp1.csproj" />
   <Project Path="Quick.UrlClient.Pipe/Quick.UrlClient.Pipe.csproj" Id="8a30d4bd-3b4e-48d9-b2ba-a2d7000791fc" />
   <Project Path="Quick.UrlClient.SerialPort/Quick.UrlClient.SerialPort.csproj" />
   <Project Path="Quick.UrlClient.Tcp/Quick.UrlClient.Tcp.csproj" Id="66c8a4bb-9fe2-4577-9c25-cff0be2d3994" />
