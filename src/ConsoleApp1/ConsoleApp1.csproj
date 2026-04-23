@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Quick.UrlClient.Pipe\Quick.UrlClient.Pipe.csproj" />
     <ProjectReference Include="..\Quick.UrlClient.SerialPort\Quick.UrlClient.SerialPort.csproj" />
     <ProjectReference Include="..\Quick.UrlClient.Tcp\Quick.UrlClient.Tcp.csproj" />
+    <ProjectReference Include="..\Quick.UrlClient.WebSocket\Quick.UrlClient.WebSocket.csproj" />
   </ItemGroup>
 
 </Project>

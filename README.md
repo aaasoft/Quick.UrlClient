@@ -16,11 +16,13 @@ using Quick.UrlClient;
 using Quick.UrlClient.Pipe;
 using Quick.UrlClient.SerialPort;
 using Quick.UrlClient.Tcp;
+using Quick.UrlClient.WebSocket;
 
 //注册要使用的URL架构
 TcpUrlClient.Register();
 SerialPortUrlClient.Register();
 PipeUrlClient.Register();
+WebSocketUrlClient.Register();
 
 var url = "serial://./COM1?BaudRate=9600";
 //根据URL创建客户端
