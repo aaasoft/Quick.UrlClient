@@ -1,5 +1,4 @@
 using System.Net.Sockets;
-using Quick.UrlClient;
 
 namespace Quick.UrlClient.Tcp;
 
