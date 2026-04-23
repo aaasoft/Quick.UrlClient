@@ -5,9 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <PackageProjectUrl>https://cnb.cool/scbeta/Quick.UrlClient</PackageProjectUrl>
     <RepositoryUrl>https://cnb.cool/scbeta/Quick.UrlClient</RepositoryUrl>
-    <Copyright />
     <Authors>scbeta</Authors>
     <Version>2026.1.423</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 	<ItemGroup>
 		<None Include="README.md">
