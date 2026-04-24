@@ -6,7 +6,7 @@
     <PackageProjectUrl>https://cnb.cool/scbeta/Quick.UrlClient</PackageProjectUrl>
     <RepositoryUrl>https://cnb.cool/scbeta/Quick.UrlClient</RepositoryUrl>
     <Authors>scbeta</Authors>
-    <Version>2026.2.424</Version>
+    <Version>2026.3.424</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 	<ItemGroup>
