@@ -4,10 +4,10 @@
 
 URL示例
 --------
- - TCP： tcp://127.0.0.1:3000
- - 命名管道： pipe://pipeName
- - 串口： serial://./COM1?BaudRate=9600
- - WebSocket： ws://127.0.0.1:3000/ws/qp
+ - [TCP](https://www.nuget.org/packages/Quick.UrlClient.Tcp):  tcp://127.0.0.1:3000
+ - [命名管道](https://www.nuget.org/packages/Quick.UrlClient.Pipe):  pipe://./PipeName
+ - [串口](https://www.nuget.org/packages/Quick.UrlClient.SerialPort):  serial://./COM1?BaudRate=9600 | serial://./tty1?BaudRate=9600 | serial://./dev/tty1?BaudRate=9600
+ - [WebSocket](https://www.nuget.org/packages/Quick.UrlClient.WebSocket):  ws://127.0.0.1:3000/ws/qp
 
 使用示例
 --------
