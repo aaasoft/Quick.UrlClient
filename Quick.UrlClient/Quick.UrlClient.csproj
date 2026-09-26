@@ -6,7 +6,6 @@
 	<PackageProjectUrl>https://github.com/aaasoft/Quick.UrlClient</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/aaasoft/Quick.UrlClient</RepositoryUrl>
 	<Authors>scbeta</Authors>
-	<Version>2026.3.424</Version>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 	<ItemGroup>
