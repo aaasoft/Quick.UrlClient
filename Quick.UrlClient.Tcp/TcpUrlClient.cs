@@ -11,6 +11,9 @@ public class TcpUrlClient : IUrlClient
 
     public string Url => options.Url;
 
+    public int SendTimeout { get => tcpClient.SendTimeout; set => tcpClient.SendTimeout = value; }
+    public int ReceiveTimeout { get => tcpClient.ReceiveTimeout; set => tcpClient.ReceiveTimeout = value; }
+
     public TcpUrlClient(TcpUrlClientOptions options)
     {
         this.options = options;

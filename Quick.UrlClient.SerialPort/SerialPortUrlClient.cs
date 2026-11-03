@@ -8,6 +8,8 @@ public class SerialPortUrlClient : IUrlClient
     private System.IO.Ports.SerialPort serialPort;
 
     public string Url => options.Url;
+    public int SendTimeout { get => serialPort.WriteTimeout; set => serialPort.WriteTimeout = value; }
+    public int ReceiveTimeout { get => serialPort.ReadTimeout; set => serialPort.ReadTimeout = value; }
 
     public SerialPortUrlClient(SerialPortUrlClientOptions options)
     {

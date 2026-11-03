@@ -14,6 +14,8 @@ public class WebSocketUrlClient : IUrlClient
     private ClientWebSocket client;
 
     public string Url => options.Url;
+    public int SendTimeout { get; set; }
+    public int ReceiveTimeout { get; set; }
 
     public WebSocketUrlClient(WebSocketUrlClientOptions options)
     {

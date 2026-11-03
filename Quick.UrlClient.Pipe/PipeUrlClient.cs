@@ -10,6 +10,8 @@ public class PipeUrlClient : IUrlClient
     private NamedPipeClientStream pipeClient;
 
     public string Url => options.Url;
+    public int SendTimeout { get => pipeClient.WriteTimeout; set => pipeClient.WriteTimeout = value; }
+    public int ReceiveTimeout { get => pipeClient.ReadTimeout; set => pipeClient.ReadTimeout = value; }
 
     public PipeUrlClient(PipeUrlClientOptions options)
     {
